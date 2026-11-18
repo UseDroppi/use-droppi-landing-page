@@ -8,8 +8,8 @@ function LegalLayout({ title, updated, children }: { title: string; updated: str
   return (
     <>
       <header className="nav nav-legal">
-        <a href="/" className="nav-logo"><Logo variant="wordmark" label="Droppi" /></a>
-        <a href="/" className="nav-cta">Voltar ao site</a>
+        <a href={import.meta.env.BASE_URL} className="nav-logo"><Logo variant="wordmark" label="Droppi" /></a>
+        <a href={import.meta.env.BASE_URL} className="nav-cta">Voltar ao site</a>
       </header>
       <main className="legal">
         <p className="legal-draft">Rascunho: este texto ainda passa por revisão jurídica. Os trechos destacados precisam ser preenchidos.</p>
@@ -116,7 +116,7 @@ export function Terms() {
       <p>
         Estes termos regem o uso do aplicativo e do site da Droppi, oferecidos por <P>[razão social]</P>, CNPJ{' '}
         <P>[CNPJ]</P>. Ao criar uma conta, você concorda com eles e com a nossa{' '}
-        <a href="/privacidade">Política de Privacidade</a>.
+        <a href={`${import.meta.env.BASE_URL}privacidade`}>Política de Privacidade</a>.
       </p>
 
       <h2>1. Sua conta</h2>
@@ -171,6 +171,32 @@ export function Terms() {
       <p>
         Podemos atualizar estes termos e avisaremos sobre mudanças relevantes. Fica eleito o foro da comarca de{' '}
         <P>[cidade/UF]</P>, sem prejuízo do foro do domicílio do consumidor. Dúvidas: <P>[e-mail de contato]</P>.
+      </p>
+    </LegalLayout>
+  )
+}
+
+export function DeleteAccount() {
+  return (
+    <LegalLayout title="Excluir sua conta Droppi" updated="17 de novembro de 2026">
+      <h2>Pelo aplicativo</h2>
+      <ol>
+        <li>Abra o Droppi e entre na sua conta.</li>
+        <li>Vá em Perfil e toque em Editar perfil.</li>
+        <li>Toque em Excluir minha conta e confirme.</li>
+      </ol>
+
+      <h2>Sem acesso ao aplicativo</h2>
+      <p>
+        Envie um e-mail para <a href="mailto:contato@usedroppi.com?subject=Excluir%20conta">contato@usedroppi.com</a>{' '}
+        com o assunto “Excluir conta”, a partir do e-mail cadastrado. Confirmamos a exclusão em até 30 dias.
+      </p>
+
+      <h2>O que é apagado</h2>
+      <p>
+        Seu perfil, foto, posts, fotos e vídeos publicados, curtidas, comentários, mensagens, conta empresarial e
+        reservas de quadra são apagados de forma definitiva. Comprovantes de pagamento podem ser mantidos pelo prazo
+        exigido pela legislação fiscal e depois descartados.
       </p>
     </LegalLayout>
   )

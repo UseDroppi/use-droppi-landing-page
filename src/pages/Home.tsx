@@ -65,7 +65,7 @@ export function Home() {
   return (
     <>
       <header className="nav">
-        <a href="/" className="nav-logo"><Logo variant="wordmark" label="Droppi" /></a>
+        <a href={import.meta.env.BASE_URL} className="nav-logo"><Logo variant="wordmark" label="Droppi" /></a>
         <nav>
           <a href="#app">O app</a>
           <a href="#submarcas">Submarcas</a>
@@ -180,8 +180,8 @@ export function Footer() {
     <footer className="footer">
       <Logo variant="wordmark-tagline" label="Droppi, every drop matters" />
       <nav>
-        <a href="/privacidade">Política de Privacidade</a>
-        <a href="/termos">Termos de Uso</a>
+        <a href={`${import.meta.env.BASE_URL}privacidade`}>Política de Privacidade</a>
+        <a href={`${import.meta.env.BASE_URL}termos`}>Termos de Uso</a>
       </nav>
       <small>© {new Date().getFullYear()} Droppi</small>
     </footer>
